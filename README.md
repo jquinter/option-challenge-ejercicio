@@ -196,3 +196,21 @@ ON
 WHERE
 	padres.vivo <> madres.vivo
 ```
+
+c. Actualice el rutPadre que apunta a un registro inexistente. Es decir que el rut que contiene no corresponde a ningún rut de persona en la tabla
+
+```
+UPDATE
+	tPersonas
+SET
+	rutPadre = 'N/A'
+WHERE
+	rutPadre NOT IN (
+		SELECT rut
+			FROM tPersonas
+		WHERE rut IN
+			(SELECT rutPadre
+			FROM tPersonas) as padres
+	)
+
+```
