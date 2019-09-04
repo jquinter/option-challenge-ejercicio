@@ -133,4 +133,21 @@ Sin embargo, es mucho mejor aplicar la fórmula para suma de enteros correlativo
 return N*(N+1)/2
 ```
 
+2. Para una lista de valores numéricos enteros con algunas repeticiones (por ejemplo lista=[100, 45, 24, 94, 2, 45, 5, ...]), desarrolle en pseudocódigo el algoritmo de ordenamiento más eficiente que usted conozca o recuerde.
+
+```
+Tomar elemento pivote en lista aleatoriamente
+
+Recorrer secuencialmente lista
+	si el elemento que tengo es menor al pivote
+		copio elemento a una lista MENORES
+	en caso contrario, copio elemento a lista NO_MENORES
+
+Repetir algoritmo (recursivamente) sobre MENORES y NO_MENORES (si es que tienen más de un elemento)
+
+La lista ordenada corresponde a la unión de MENORES y NO_MENORES
+```
+
+Inconveniente de este algoritmo es el uso de espacio extra para almacenar listas parciales, pero es eficiente en tiempo (debería ser `O(NlogN)` si no me falla la imaginación a esta hora).
+
 
