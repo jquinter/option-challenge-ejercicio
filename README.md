@@ -1,5 +1,7 @@
 # option-challenge-ejercicio
 
+Primero analizo el dataset. Al final, realizo los ejercicios propuestos.
+
 ## Análisis Titanic
 
 Primero, descargo datos desde el repositorio de github a mi máquina.
@@ -110,3 +112,25 @@ FROM
   [option-challenge-dataeng:titanic.titanic]
 
 ```
+
+## Ejercicios
+
+1. Dado un número _N_, desarrolle el algoritmo que encuentre el resultado de `1 + 2 + 3 + 4 + ... + N`
+
+Un enfoque _naive_ es hacer la suma directa
+
+```
+sum = 0
+for i = 1 to N do:
+	sum += i
+done
+return sum
+```
+
+Sin embargo, es mucho mejor aplicar la fórmula para suma de enteros correlativos:
+
+```
+return N*(N+1)/2
+```
+
+
