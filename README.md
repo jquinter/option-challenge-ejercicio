@@ -150,4 +150,49 @@ La lista ordenada corresponde a la unión de MENORES y NO_MENORES
 
 Inconveniente de este algoritmo es el uso de espacio extra para almacenar listas parciales, pero es eficiente en tiempo (debería ser `O(NlogN)` si no me falla la imaginación a esta hora).
 
+3. Para las siguiente estructura, tPersona=(rut as varchar, NombreCompleto as varchar, fechaNacimiento as date, vivo as boolean, rutPadre as varchar, rutMadre as varchar).
 
+a. Desarrolle el script SQL o pseudocódigo que liste todas las personas cuyo padre y madre hayan nacido en el mismo dia.
+
+```
+SELECT
+	rut,
+	NombreCompleto
+FROM
+	tPersonas t
+JOIN
+(
+	SELECT
+		padres.rut as rut_padre,
+		madres.rut as rut_madre
+	FROM
+		tPersonas padres
+	JOIN
+		tPersonas madres
+	ON padres.fechaNacimiento = madres.fechaNacimiento AND padres.fechaNacimiento IS NOT NULL
+) padres_mismo_dia
+ON
+	t.rutPadre = padres_mismo_dia.rut_padre
+	AND
+	t.rutMadre = padres_mismo_dia.rut_madre
+```
+
+b. Liste el nombre de las personas que sólo tienen vivo uno de los progenitores,
+padre o madre.
+
+```
+SELECT
+	NombreCompleto
+FROM
+	tPersonas t
+JOIN
+	tPersonas padres
+ON
+	t.rutPadre = padres.rut
+JOIN
+	tPersonas madres
+ON
+	t.rutMadre = madres.rut
+WHERE
+	padres.vivo <> madres.vivo
+```
