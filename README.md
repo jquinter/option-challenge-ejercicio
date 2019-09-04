@@ -90,11 +90,11 @@ Ok, está listo para poder visualizar: conecto BigQuery a DataStudio
 
 Elaboré este pequeño informe: podemos ver distribución de géneros en el registro de 891 pasajeros, la distribución de sobrevivientes según géneros (primera tabla, arriba), así como la distribución de sobrevivientes según géneros y la clase del pasajero (segunda tabla), y finalmente un histograma del costo promedio de tickets, según la clase del pasajero (esto está distorsionado por los outliers que no removí!).
 
-![datastudio report](https://github.com/jquinter/option-challenge-ejercicio/raw/master/img/Screen_Shot_2019-09-00.20.20.png "datastudio report")
+![datastudio report](https://github.com/jquinter/option-challenge-ejercicio/raw/master/img/Screen_Shot_2019-09-04_at_00.20.20.png "datastudio report")
 
 Tarea adicional: consulta para agregar prioridad de salvataje. Reviso registros para validar que cálculo/asignación esté correcto
 
-![additional task](https://github.com/jquinter/option-challenge-ejercicio/raw/master/img/Screen_Shot_2019-09-00.22.14.png "additional task")
+![additional task](https://github.com/jquinter/option-challenge-ejercicio/raw/master/img/Screen_Shot_2019-09-04_at_00.22.14.png "additional task")
 
 Por si no se ve, esta es:
 
